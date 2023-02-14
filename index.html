@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trabalho de CLP</title>
+    <style>
+      * {
+        font-family: "Lato", sans-serif;
+      }
+
+      body {
+        background-color: #edf1f4;
+      }
+
+      .inputs-wrapper {
+        gap: 20px;
+        height: 290px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 10px;
+        width: 250px;
+        box-shadow: 3px 3px 6px 1px #dcdcdc;
+      }
+
+      .input-log-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 80px;
+      }
+
+      .log-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 310px;
+        width: 270px;
+        background-color: #fff;
+        box-shadow: 3px 3px 6px 1px #dcdcdc;
+        border-radius: 10px;
+      }
+
+      button {
+        color: #fff;
+        cursor: pointer;
+      }
+
+      input {
+        width: 100%;
+        max-width: 200px;
+        background-color: #f6f6f6;
+        padding: 0 10px;
+        outline: none;
+        /* box-shadow: 1px 1px 3px 1px #9fa3a5; */
+        border: none;
+        height: 40px;
+        border-radius: 40px;
+      }
+
+      .sendButton {
+        border: none;
+        border-radius: 30px;
+        width: 100%;
+        max-width: 150px;
+        height: 45px;
+        /* box-shadow: 1px 1px 3px 1px #9fa3a5; */
+        background-color: #0071ff;
+        outline: none;
+      }
+
+      .apagar {
+        border: none;
+        border-radius: 50%;
+        width: 100%;
+        max-width: 45px;
+        height: 45px;
+        /* box-shadow: 1px 1px 3px 1px #9fa3a5; */
+        background-color: #fff;
+        color: #000;
+        font-weight: 700;
+        border: 1px solid #eaeef2;
+      }
+
+      .log {
+        display: flex;
+        /* align-items: center; */
+        font-size: 20px;
+        max-width: 400px;
+        border-radius: 10px;
+        width: 100%;
+        height: 400px;
+        flex-direction: column;
+        /* border: 2px solid #607D86; */
+      }
+
+      .show {
+        overflow: auto;
+        font-size: 15px;
+        max-height: 200px;
+        padding: 10px;
+      }
+
+      hr {
+        border: 1px solid #f6f6f6;
+        font-weight: 700;
+      }
+
+      p {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+      }
+
+      h4 {
+        /* border-bottom: 2px solid #607D86; */
+        padding: 10px;
+        border-radius: 10px;
+        margin: 0;
+      }
+
+      h3 {
+        margin-bottom: -23px;
+      }
+
+      .sessao-ajuda {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .input-and-button {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 55px;
+      }
+
+      .botoes {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      .log h3 {
+        margin-left: 10px;
+        margin-top: 28px;
+      }
+
+      .show {
+        margin-top: 25px;
+      }
+
+      .ajuda {
+        border: none;
+        border-radius: 30px;
+        width: 150px;
+        height: 45px;
+        /* box-shadow: 1px 1px 3px 1px #9fa3a5; */
+        background-color: #0071ff;
+        outline: none;
+      }
+
+      .ajuda-texto {
+        margin-top: 10px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 10px;
+        /* width: 250px; */
+        box-shadow: 3px 3px 6px 1px #dcdcdc;
+      }
+
+      .exemplos {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .exemplos-box {
+        width: 615px;
+        background-color: #fff;
+        height: 310px;
+        box-shadow: 3px 3px 6px 1px #dcdcdc;
+        border-radius: 10px;
+      }
+
+      .botoes-exemplo {
+        margin-top: 60px;
+        display: grid;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        height: 60%;
+      }
+
+      .botoes-exemplo button {
+        border: none;
+        border-radius: 30px;
+        margin: -10px 0;
+        width: 183px;
+        height: 45px;
+        /* box-shadow: 1px 1px 3px 1px #9fa3a5; */
+        background-color: #0071ff;
+        outline: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="sessao-ajuda">
+      <div class="botao-ajuda">
+        <button class="ajuda" onclick="mostrarAjuda()">Como usar</button>
+      </div>
+      <div style="display: none" class="ajuda-texto">
+        <p>
+          • Utilize um dos comandos de exemplo abaixo para utilizar o programa
+        </p>
+        <p>• Parágrafo : /p{suamensagem}</p>
+        <p>• Tabela : /t{suamensagem}</p>
+        <p>• Lista : /l{suamensagem}</p>
+        <p>• Texto Repetido : /r{suamensagem}</p>
+        <p>• Texto Booleano : /i{suamensagem}</p>
+        <p>• Clique no X para limpar o log de comandos e o input</p>
+      </div>
+    </section>
+    <section class="input-log-wrapper">
+      <div class="inputs-wrapper">
+        <div>
+          <h3>Processador de tokens</h3>
+        </div>
+        <div class="input-and-button">
+          <input class="expression" value="" placeholder="Insira seu comando" />
+          <div class="botoes">
+            <button onclick="start()" class="sendButton" type="submit">
+              Enviar
+            </button>
+            <button class="apagar" onclick="Apagartudo()">X</button>
+          </div>
+        </div>
+      </div>
+      <div class="log-wrapper">
+        <div class="log">
+          <h3>Log de Comandos</h3>
+          <div class="show"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="exemplos">
+      <div class="exemplos-box">
+        <div class="exemplos-titulo">
+          <h3 style="margin-left: 10px">Exemplos</h3>
+        </div>
+        <div class="botoes-exemplo">
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/p{Teste}"
+            class="exemplo1"
+          >
+            /p{Teste}
+          </button>
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/l{Lista 1}"
+            class="exemplo2"
+          >
+            /l{Lista 1}
+          </button>
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/t{Gerando Tabela}"
+            class="exemplo3"
+          >
+            /t{Gerando Tabela}
+          </button>
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/r{Texto}"
+            class="exemplo4"
+          >
+            /r{Texto}
+          </button>
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/i{1}/p{Escrevendo}/r{Texto}"
+            class="exemplo5"
+          >
+            /i{1}/p{Escrevendo}/r{Texto}
+          </button>
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/p{Escrevendo}"
+            class="exemplo6"
+          >
+            /p{Escrevendo}
+          </button>
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/r{Repetido}"
+            class="exemplo7"
+          >
+            /r{Repetido}
+          </button>
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/t{Tabela}/l{Nova Lista}/p{Escrevendo}"
+            class="exemplo8"
+          >
+            /t{Tabela}/l{Nova Lista}/p{Escrevendo}
+          </button>
+          <button
+            onclick="passarExemplo(this.value)"
+            value="/l{Nova Lista}"
+            class="exemplo9"
+          >
+            /l{Nova Lista}
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function passarExemplo(valor) {
+    var input = document.querySelector(".expression");
+    input.value = valor;
+    console.log(valor);
+    start();
+  }
+  function Apagartudo() {
+    var input = document.querySelector(".expression");
+    input.value = "";
+    var show = document.querySelector(".show");
+    show.innerHTML = "";
+  }
+  function mostrarAjuda() {
+    var ajuda = document.querySelector(".ajuda-texto");
+    if (ajuda.style.display === "none") ajuda.style.display = "block";
+    else ajuda.style.display = "none";
+  }
+  function start() {
+    var input = document.querySelector(".expression");
+    var expression = input.value;
+    recognize(expression);
+  }
+
+  function recognize(expression) {
+    let expressions = ["T", "P", "R", "I", "L"];
+    let show = document.querySelector(".show");
+
+    const transformedExpression = TransformToUpperCase(expression);
+    const multTokens = transformedExpression.split("/");
+    const matchVariable = {
+      match1: "$",
+      match2: "=",
+      match3: "{",
+      match4: "/",
+    };
+
+    const open = "{";
+    const close = "}";
+    const bar = "/";
+    console.log(multTokens.shift());
+    multTokens.forEach((e) => {
+      const expressionArray = e.split("");
+      if (
+        expressionArray[1] == open &&
+        expressionArray[expressionArray.length - 1] === close
+      ) {
+        console.log(expressionArray[0]);
+        if (expressions.includes(expressionArray[0])) {
+          switch (expressionArray[0]) {
+            case "T":
+              show.innerHTML += "<hr> <p> TABELA RECONHECIDA </p> </hr>";
+              break;
+            case "P":
+              show.innerHTML += "<hr> <p> PARÁGRAFO RECONHECIDO </p> </hr>";
+              break;
+            case "L":
+              show.innerHTML += "<hr> <p> LISTA RECONHECIDA </p> </hr>";
+              break;
+            case "R":
+              show.innerHTML +=
+                "<hr> <p> TEXTO REPETIDO RECONHECIDO </p> </hr>";
+              break;
+            case "I":
+              show.innerHTML +=
+                "<hr> <p> TEXTO BOOLEANO RECONHECIDO </p> </hr>";
+              break;
+          }
+        } else {
+          show.innerHTML += "<hr> TOKEN DESCONHECIDO";
+        }
+      } else if (
+        expressionArray.includes(matchVariable.match1) &&
+        expressionArray.includes(matchVariable.match2) &&
+        expressionArray.includes(matchVariable.match3) &&
+        expressionArray.includes(matchVariable.match4) &&
+        expressionArray[expressionArray.length - 1] === close
+      ) {
+        show.innerHTML = "<hr> VARIÁVEL RECONHECIDA";
+      } else {
+        show.innerHTML = "<hr> <p>HÁ ERROS DE VALIDAÇÕES!</p>";
+      }
+      console.log(expressionArray);
+    });
+  }
+
+  function TransformToUpperCase(expression) {
+    return expression.toUpperCase();
+  }
+</script>
